@@ -1,24 +1,25 @@
 import React from 'react';
-import { constants } from 'zlib';
 
 class Bomb extends React.Component {
 
-    this.state = {
+    state = {
         count: 0
     }
-componentDidMount({
+componentDidMount(){
     this.interval = setInterval(() => {
         const newCount = this.state.count + 1
-
+        if(newCount > 8){
+            clearInterval(this.interval)
+        }
+        console.log(newCount)
         this.setState({
             count: newCount
-
         })
-    })
-})
+    }, 1000)
+}
 
 componentWillUnmount (){
-    clearInterval(this.interval)
+        clearInterval(this.interval)
 }
 
 
@@ -26,9 +27,9 @@ componentWillUnmount (){
       return (
           <div>
             
-            <p>tick</p>
-            <p>tock</p>
-            <p>BOOM!!!</p>
+            <p style={{display: this.state.count % 2 === 0 ? "block" : "none"}}>tick</p>
+            <p style={{display: this.state.count % 2 !== 0 ? "block" : "none"}}>tock</p>
+            <p style={{display: this.state.count >= 8 ? "block" : "none"}}>BOOM!!!</p>
 
 
           </div>
