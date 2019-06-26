@@ -5,13 +5,34 @@ class HelloWorld extends React.Component {
         who: 'world'
     }
 
+     worldClick = () => {
+         this.setState({
+            who: 'world' 
+         })
+     }
+
+     friendClick = () => {
+        this.setState({
+           who: 'friend' 
+        })
+    }
+
+    reactClick = () => {
+        this.setState({
+           who: 'react' 
+        })
+    }
+
+        
+    
+
     render() {
         return (
-            <div classs="helloWorld">
+            <div className="helloWorld">
                 <p>Hello, {this.state.who}</p>
-                <button>World</button>
-                <button>Friend</button>
-                <button>React</button>
+                <button onClick={()=> this.worldClick()}> World </button>
+                <button onClick={()=> this.friendClick()}> Friend</button>
+                <button onClick={()=> this.reactClick()}> React</button>
             </div>
         )
     }
