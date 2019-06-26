@@ -1,0 +1,25 @@
+.active, button:hover {
+    background-color: #002444; 
+  }
+
+  button {
+      padding: 40px;
+      width:50%;
+      border: none;
+      font-size: 1em;
+      color: #ffffff;
+      background-color: lightgray;
+  }
+
+  li {
+      text-align: center;
+      list-style: none;
+  }
+
+  .content{
+      background: black;
+      color: white;
+      width: 50%;
+      margin: 0 auto;
+      
+  }
